@@ -16,19 +16,18 @@ double [,] GetArray (int m, int n)
     {
         for (int j = 0; j<n; j++)
        {
-        Num[i,j] = Math.Round(new Random().Next(-10,10) + 
-        new Random().NextDouble(),1);
+        Num[i,j] = Math.Round(new Random().Next(-10,10) + new Random().NextDouble(),1);
        }
     }
     return Num;
 }
 
-void PrintArray (double [,] Numbers, int m, int n)
+void PrintArray (double [,] Numbers)
 {
-    for (int i = 0; i<m; i++)
+    for (int i = 0; i< Numbers.GetLength(0); i++)
     {
          Console.WriteLine(" ");
-         for (int j = 0; j<n; j++)
+         for (int j = 0; j<Numbers.GetLength(1); j++)
                     {
                     Console.Write(Numbers[i,j]);
                     Console.Write("    ");
@@ -41,5 +40,4 @@ int m = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите размерность n двумерного массива");
 int n = Convert.ToInt32(Console.ReadLine());
 
-double [,] a = GetArray(m,n);
-PrintArray(a, m, n);
+PrintArray(GetArray(m,n));
