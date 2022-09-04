@@ -5,8 +5,7 @@
 11 16 15 06
 10 09 08 07
 */
-
-int[,] GetSpiralArray()
+int[,] GetSpiralArray2()
 {
     int[,] spiral = new int[4, 4];
     int value = 1;
@@ -16,85 +15,52 @@ int[,] GetSpiralArray()
         {
             spiral[i, j] = value;
             value++;
-            if (j == 3)
-            {
-
-                for (i = 1; i < 4; i++)
-                {
-                    spiral[i, j] = value;
-                    value++;
-                }
-                if (i == 4)
-                {
-                    int a = 3;
-                    int b;
-                    for (b = 2; b > -1; b--)
-                    {
-                        spiral[a, b] = value;
-                        value++;
-                        if (b == 0)
-                        {
-                            int c;
-                            for (c = 2; c > 0; c--)
-                            {
-                                spiral[c, b] = value;
-                                value++;
-                                if (c == 1)
-                                {
-                                    int d;
-                                    for (d = 1; d < 3; d++)
-                                    {
-                                        spiral[c, d] = value;
-                                        value++;
-                                        if (d == 2)
-                                        {
-                                            d=2;
-                                            int e;
-                                            for (e = 1; e < 3; e++)
-                                            {
-                                                spiral[e, d] = value;
-                                                value++;
-                                            }
-                                            if (e == 3)
-                                            {
-                                                e=2;
-                                                int z;
-                                                for (z = 1; z > 0; z--)
-                                                {
-                                                    spiral[e, z] = value;
-                                                    value++;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-
-
-                            }
-                        }
-                    }
-
-                }
-            }
         }
-
+        int f = 3;
+        for (i = 1; i < 4; i++)
+        {
+            spiral[i, f] = value;
+            value++;
+        }
+        int a = 3;
+        int b;
+        for (b = 2; b > -1; b--)
+        {
+            spiral[a, b] = value;
+            value++;
+        }
+        int c;
+        int q = 0;
+        for (c = 2; c > 0; c--)
+        {
+            spiral[c, q] = value;
+            value++;
+        }
+        int d;
+        int w = 1;
+        for (d = 1; d < 3; d++)
+        {
+            spiral[w, d] = value;
+            value++;
+        }
+        int e;
+        int t = 2;
+        for (e = 2; e < 3; e++)
+        {
+            spiral[e, t] = value;
+            value++;
+        }
+        e = 2;
+        int z;
+        for (z = 1; z > 0; z--)
+        {
+            spiral[e, z] = value;
+            value++;
+        }
     }
     return spiral;
 }
 
-/*
-void FillImage(int row, int col)
-{
- if (pic[row, col] == 0)
- {
- pic[row, col] = 1;
- FillImage(row - 1, col);
- FillImage(row, col - 1);
- FillImage(row + 1, col);
- FillImage(row, col + 1);
- }
-}
-*/
 string fmt = "00";
 void PrintArray(int[,] Numbers)
 {
@@ -110,4 +76,4 @@ void PrintArray(int[,] Numbers)
     }
 }
 
-PrintArray(GetSpiralArray());
+PrintArray(GetSpiralArray2());
